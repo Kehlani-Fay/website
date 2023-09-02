@@ -44,6 +44,21 @@ table {
   border-spacing: 0;
 }
 
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 20px;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
 /**************************************************/
 
 #body{
@@ -90,6 +105,7 @@ h1 {
 #intro {
   padding-top: 6em;
   display: flex;
+  padding-bottom: 6em;
 }
 
 #intro-text {
@@ -98,10 +114,11 @@ h1 {
 }
 
 #intro-image {
-  margin: 2em 0 0 2em;
+  position: relative;
+  margin: -1em 0 0 2em;
   width: 12em;
-  height: 12em;
-  float: left;
+  height: 15em;
+  float: right;
   overflow: hidden;
   border-radius: 1em;
 }
@@ -110,11 +127,38 @@ h1 {
   width: 12em;
 }
 
+#intpar {
+  width: 40em;
+  float: left;
+  line-height: 1.5; 
+  top: 50px;
+  font: inherit;
+  line-height: 1.5;
+}
+
+#community {
+  width: 40em;
+  float: left;
+  line-height: 1.5; 
+  top: 50px;
+  font: inherit;
+  line-height: 1.5;
+}
+
+
 /**************************************************/
 /* Section buttons. */
 
 #menu {
   display: flex;
+}
+
+hr
+{
+  width: 30%;
+  border: 0;
+  height: 1px;
+  background-image:  linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
 .menu-item {
@@ -123,10 +167,19 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6em;
+  font-size: 1.4em;
   line-height: 2.4em;
-  margin-top: 0.5em;
+  margin-top: -1.5em;
   color: #a0a8b0;
+}
+
+h4 {
+  text-align: left;
+  font-size: 1.1em;
+  line-height: 3em;
+  margin-top: .5em;
+  color: black;
+  font-weight: bold;
 }
 
 .selected h2 {
@@ -134,17 +187,25 @@ h2 {
 }
 
 .button {
+  font-weight: bold;
   display: inline-block;
   cursor: pointer;
   border: none;
   background: none;
   color: #a0a8b0;
-  font-size: 1.6em;
+  font-size: 1.2em;
   line-height: 2.4em;
   margin-top: 0.5em;
-  margin-right: 1em;
+  margin-right: 1.5em;
   float: left;
   padding: 0;
+}
+
+
+
+.intro-text {
+  position: absolute;
+  top: 50px;
 }
 
 .button:hover {
@@ -162,10 +223,40 @@ h2 {
   clear: both;
 }
 
+.faq-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: lightgray; /* Light gray background for the question */
+  border-radius: 10px; /* Rounded edges */
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none; /* Initially hide the answer */
+  padding: 10px;
+}
+
+.bullet-interests {
+  list-style-type: disc; /* Use disc style for bullet points */
+  margin-left: 20px; /* Add some left margin for indentation */
+  padding-top: 5px;
+}
+
+/* Add padding between each list item */
+.bullet-interests li {
+  padding-bottom: 10px; /* Adjust the padding as needed */
+}
 /**************************************************/
 /* Isotope grid list of items. */
 
 .grid {
+  position: relative;
+  text-align: left;
   padding-bottom: 6em;
 }
 
@@ -181,6 +272,8 @@ h2 {
 }
 
 .list-item {
+  font: inherit;
+  vertical-align: baseline;
   width: 100%;
   line-height: 1em;
   margin-top: 1em;
@@ -191,6 +284,89 @@ h2 {
   width: 3em;
   color: #a0a8b0;
 }
+
+.artGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 4fr;
+  gap: 10px;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 100%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  max-width: 40%;
+}
+
+.scaled-image {
+  margin-left: 20px;
+  width: 20%;
+  padding-right: 10px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+  gap: 20px;
+}
+
+.project-item img {
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.overlay-project {
+  position: relative;
+  top: -200px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.project-item:hover .overlay-project {
+  opacity: 1;
+  
+}
+
+.project-description {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font: inherit;
+}
+
+.project-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-image {
+  width: 100%; /* Make the image take the full width of the grid item */
+  height: 100%; /* Make the image take the full height of the grid item */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+}
+
 
 /**************************************************/
 /* Gallery of 3 preview videos. */
@@ -212,7 +388,7 @@ h2 {
 }
 
 .preview1 {
-  grid-column: 1;
+  grid-column: 1
   width: 100%;
 }
 .preview2 {
@@ -222,6 +398,24 @@ h2 {
 .preview3 {
   grid-column: 3;
   width: 100%;
+}
+
+.icon-line {
+  display: inline-block; 
+}
+
+/* Increase the size of icons */
+.icon {
+  font-size: 30px; /* 4 times larger than 24px */
+  margin: 0 15px;
+  color: black; 
+}
+
+.header {
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  display: inline-block; 
 }
 
 /**************************************************/
@@ -268,7 +462,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1em;
+  font-size: 2em;
   line-height: 1.5em;
 }
 
