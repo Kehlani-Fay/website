@@ -332,7 +332,7 @@ h4 {
 
 .overlay-project {
   position: relative;
-  top: -300px;
+  top: -250px;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
